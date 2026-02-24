@@ -14,6 +14,23 @@ body {
     color: #fff;
 }
 
+/* HERO IMAGE */
+.hero {
+    width: 100%;
+    height: 260px;
+    background-image: url("https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/e30ab6fa8c6e0d3babf7e99a53e3dd1f7d91de3a/.github/workflows/Screenshot_20260224-134455.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
 /* Header */
 header {
     background: linear-gradient(90deg, #000, #2b2b2b);
@@ -35,14 +52,14 @@ header p {
     color: #ddd;
 }
 
-/* Main Section */
+/* Main Container */
 .container {
     max-width: 900px;
     margin: 30px auto;
     padding: 20px;
 }
 
-/* Highlight Message */
+/* Highlight Section */
 .highlight {
     background: #111;
     border-left: 5px solid gold;
@@ -65,7 +82,7 @@ form {
     background: #151515;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(255,215,0,0.2);
+    box-shadow: 0 0 15px rgba(255,215,0,0.25);
 }
 
 form h3 {
@@ -134,6 +151,7 @@ footer {
     color: #fff;
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 1000;
 }
 
 .whatsapp-btn {
@@ -150,6 +168,9 @@ footer {
 
 <body>
 
+<!-- TOP IMAGE -->
+<div class="hero"></div>
+
 <header>
     <h1>FESTO TELECOM ENTERPRISES</h1>
     <p>Professional Phone Repairs • iPhone Screens • Wholesale Phone Accessories</p>
@@ -160,9 +181,9 @@ footer {
     <div class="highlight">
         <h2>Your Trusted Telecom Solution Hub</h2>
         <p>
-            At <strong>FESTO TELECOM ENTERPRISES</strong>, we specialize in professional phone repairs,
-            original and high-quality phone screens (including iPhone), and wholesale supply of
-            phone accessories. Fill the form below and our team will attend to you immediately.
+            FESTO TELECOM ENTERPRISES is your reliable destination for expert phone repairs,
+            original phone screens (including iPhone), and wholesale supply of quality phone
+            accessories. Fill the form below and our team will respond immediately.
         </p>
     </div>
 
@@ -183,13 +204,13 @@ footer {
         </select>
 
         <label>Name of Phone / Product</label>
-        <input type="text" placeholder="Example: iPhone 13 Pro Screen">
+        <input type="text" placeholder="Example: iPhone 14 Pro Max Screen">
 
         <label>Phone to Repair (if applicable)</label>
-        <input type="text" placeholder="Example: Samsung Galaxy S21">
+        <input type="text" placeholder="Example: Tecno Spark 10">
 
         <label>Specifications / Additional Details</label>
-        <textarea placeholder="Explain size, model, color, problem description, or quantity needed"></textarea>
+        <textarea placeholder="Describe model, color, issue, quantity, or special request"></textarea>
 
         <label>Customer Name</label>
         <input type="text" placeholder="Your full name">
@@ -209,12 +230,12 @@ footer {
 </div>
 
 <footer>
-    © 2026 FESTO TELECOM ENTERPRISES — Quality, Speed & Trust
+    © 2026 FESTO TELECOM ENTERPRISES — Quality • Speed • Trust
 </footer>
 
 <!-- WhatsApp Button -->
-<a class="whatsapp-btn" 
-   href="https://wa.me/2348064091788?text=I%20am%20interested%20in%20your%20services" 
+<a class="whatsapp-btn"
+   href="https://wa.me/2348064091788?text=I%20am%20interested%20in%20your%20services"
    target="_blank">
    WhatsApp
 </a>

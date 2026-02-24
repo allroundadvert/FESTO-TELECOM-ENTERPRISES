@@ -3,228 +3,267 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>FESTO TELECOM ENTERPRISES</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #0b0b0b, #1c1c1c);
-    color: #fff;
+:root{
+    --gold:#d4af37;
+    --deep:#05070a;
+    --dark:#0e1117;
+    --blue:#0a58ff;
 }
 
-/* HERO IMAGE */
-.hero {
-    width: 100%;
-    height: 260px;
-    background-image: url("https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/e30ab6fa8c6e0d3babf7e99a53e3dd1f7d91de3a/.github/workflows/Screenshot_20260224-134455.jpg");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
+body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617 60%);
+    color:#e5e7eb;
 }
 
-/* Header */
-header {
-    background: linear-gradient(90deg, #000, #2b2b2b);
-    padding: 25px;
-    text-align: center;
-    border-bottom: 3px solid gold;
-}
-header h1 {
-    margin: 0;
-    color: gold;
-    font-size: 28px;
-    letter-spacing: 2px;
-}
-header p {
-    margin-top: 10px;
-    font-size: 15px;
-    color: #ddd;
+/* ===== HERO IMAGE (NO STRETCH) ===== */
+.hero{
+    width:100%;
+    aspect-ratio: 16 / 7;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-/* Container */
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit: contain; /* KEY FIX */
+    background:#000;
 }
 
-/* Highlight */
-.highlight {
-    background: #111;
-    border-left: 5px solid gold;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-.highlight h2 {
-    color: gold;
-    margin-top: 0;
-}
-.highlight p {
-    color: #ccc;
-    line-height: 1.6;
+/* ===== HEADER ===== */
+header{
+    background: linear-gradient(180deg, #020617, #000);
+    padding:28px 16px;
+    text-align:center;
+    border-bottom:2px solid var(--gold);
 }
 
-/* Form */
-form {
-    background: #151515;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(255,215,0,0.25);
-}
-form h3 {
-    color: gold;
-    text-align: center;
+header h1{
+    margin:0;
+    color:var(--gold);
+    font-size:30px;
+    letter-spacing:3px;
+    font-weight:800;
 }
 
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 5px;
-    border: none;
-    background: #222;
-    color: #fff;
-}
-textarea {
-    min-height: 80px;
+header p{
+    margin-top:8px;
+    color:#9ca3af;
+    font-size:15px;
 }
 
-button {
-    margin-top: 25px;
-    width: 100%;
-    padding: 15px;
-    background: gold;
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-button:hover {
-    background: #ffcc00;
+/* ===== CONTAINER ===== */
+.container{
+    max-width:920px;
+    margin:40px auto;
+    padding:0 16px;
 }
 
-/* Floating Buttons */
-.whatsapp-btn, .call-btn {
-    position: fixed;
-    right: 20px;
-    padding: 14px 18px;
-    border-radius: 50px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    z-index: 1000;
+/* ===== POWER MESSAGE ===== */
+.highlight{
+    background: linear-gradient(135deg, #020617, #020617);
+    border:1px solid rgba(212,175,55,.35);
+    box-shadow:0 0 30px rgba(212,175,55,.08);
+    padding:28px;
+    margin-bottom:36px;
 }
-.whatsapp-btn {
-    bottom: 90px;
-    background: #25D366;
+
+.highlight h2{
+    color:var(--gold);
+    margin-top:0;
+    font-size:22px;
 }
-.call-btn {
-    bottom: 30px;
-    background: #007bff;
+
+.highlight p{
+    line-height:1.7;
+    color:#d1d5db;
+}
+
+/* ===== FORM ===== */
+form{
+    background: linear-gradient(180deg, #020617, #020617);
+    border:1px solid rgba(59,130,246,.25);
+    padding:30px;
+    box-shadow:0 0 40px rgba(59,130,246,.08);
+}
+
+form h3{
+    text-align:center;
+    color:var(--gold);
+    margin-bottom:24px;
+    font-size:20px;
+}
+
+label{
+    display:block;
+    margin-top:16px;
+    font-weight:600;
+    color:#e5e7eb;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    background:#020617;
+    border:1px solid #1f2937;
+    color:#fff;
+    font-size:14px;
+}
+
+input:focus,select:focus,textarea:focus{
+    outline:none;
+    border-color:var(--blue);
+}
+
+textarea{
+    min-height:90px;
+}
+
+button{
+    margin-top:28px;
+    width:100%;
+    padding:16px;
+    background: linear-gradient(90deg, var(--gold), #ffd966);
+    border:none;
+    color:#000;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+button:hover{
+    filter:brightness(1.05);
+}
+
+/* ===== FLOATING BUTTONS ===== */
+.whatsapp-btn,.call-btn{
+    position:fixed;
+    right:18px;
+    padding:14px 18px;
+    border-radius:40px;
+    color:#fff;
+    font-weight:700;
+    text-decoration:none;
+    z-index:999;
+    box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+
+.whatsapp-btn{
+    bottom:90px;
+    background:#22c55e;
+}
+
+.call-btn{
+    bottom:28px;
+    background:#2563eb;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    margin-top:50px;
+    padding:20px;
+    text-align:center;
+    background:#000;
+    color:#9ca3af;
+    font-size:13px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero"></div>
+<!-- HERO IMAGE (NO STRETCH) -->
+<div class="hero">
+    <img src="https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/e30ab6fa8c6e0d3babf7e99a53e3dd1f7d91de3a/.github/workflows/Screenshot_20260224-134455.jpg" alt="Festo Telecom">
+</div>
 
 <header>
     <h1>FESTO TELECOM ENTERPRISES</h1>
-    <p>Phone Repairs • iPhone Screens • Wholesale Phone Accessories</p>
+    <p>Professional Phone Repairs • iPhone Screens • Wholesale Accessories</p>
 </header>
 
 <div class="container">
 
-    <div class="highlight">
-        <h2>Your Trusted Telecom Solution Hub</h2>
-        <p>
-            Fill the form below to request phone repair, screen replacement, or purchase
-            phone accessories. Your message will be sent directly to our WhatsApp instantly.
-        </p>
-    </div>
+<div class="highlight">
+<h2>Power • Precision • Trust</h2>
+<p>
+FESTO TELECOM ENTERPRISES delivers expert phone repairs, original-quality
+screens for all devices including iPhone, and wholesale supply of premium
+phone accessories. Fill the form below — your request goes directly to WhatsApp.
+</p>
+</div>
 
-    <!-- FORM -->
-    <form onsubmit="sendToWhatsApp(); return false;">
-        <h3>Purchase / Repair Request Form</h3>
+<form onsubmit="sendToWhatsApp();return false;">
+<h3>Purchase / Repair Request</h3>
 
-        <label>Service Type</label>
-        <select id="service">
-            <option>Buying</option>
-            <option>Repair</option>
-        </select>
+<label>Service Type</label>
+<select id="service">
+<option>Buying</option>
+<option>Repair</option>
+</select>
 
-        <label>Interest</label>
-        <select id="interest">
-            <option>Phone Accessories</option>
-            <option>Phone Screen</option>
-            <option>Complete Phone</option>
-        </select>
+<label>Interest</label>
+<select id="interest">
+<option>Phone Accessories</option>
+<option>Phone Screen</option>
+<option>Complete Phone</option>
+</select>
 
-        <label>Phone / Product Name</label>
-        <input type="text" id="product" placeholder="e.g. iPhone 13 Pro Screen">
+<label>Phone / Product Name</label>
+<input id="product" type="text">
 
-        <label>Phone to Repair</label>
-        <input type="text" id="repair" placeholder="e.g. Samsung A12">
+<label>Phone to Repair</label>
+<input id="repair" type="text">
 
-        <label>Specifications / Details</label>
-        <textarea id="specs" placeholder="Describe issue, model, color, quantity"></textarea>
+<label>Specifications / Details</label>
+<textarea id="specs"></textarea>
 
-        <label>Customer Name</label>
-        <input type="text" id="name" placeholder="Your full name">
+<label>Customer Name</label>
+<input id="name" type="text">
 
-        <label>Phone Number</label>
-        <input type="tel" id="phone" placeholder="Your phone number">
+<label>Phone Number</label>
+<input id="phone" type="tel">
 
-        <label>Customer Type</label>
-        <select id="customer">
-            <option>New Customer</option>
-            <option>Old Customer</option>
-        </select>
+<label>Customer Type</label>
+<select id="customer">
+<option>New Customer</option>
+<option>Old Customer</option>
+</select>
 
-        <button type="submit">Send to WhatsApp</button>
-    </form>
+<button type="submit">SEND TO WHATSAPP</button>
+</form>
 
 </div>
 
-<!-- Floating Buttons -->
-<a class="whatsapp-btn"
-   href="https://wa.me/2348064091788?text=I%20am%20interested%20in%20your%20services"
-   target="_blank">WhatsApp</a>
+<footer>
+© 2026 FESTO TELECOM ENTERPRISES — Built for Power & Trust
+</footer>
 
+<a class="whatsapp-btn" href="https://wa.me/2348064091788" target="_blank">WhatsApp</a>
 <a class="call-btn" href="tel:08064091788">Call</a>
 
-<!-- WHATSAPP SCRIPT -->
 <script>
-function sendToWhatsApp() {
-    var message =
-        "📱 *FESTO TELECOM ENTERPRISES* 📱%0A%0A" +
-        "*Service Type:* " + document.getElementById("service").value + "%0A" +
-        "*Interest:* " + document.getElementById("interest").value + "%0A" +
-        "*Product Name:* " + document.getElementById("product").value + "%0A" +
-        "*Phone to Repair:* " + document.getElementById("repair").value + "%0A" +
-        "*Specifications:* " + document.getElementById("specs").value + "%0A%0A" +
-        "*Customer Name:* " + document.getElementById("name").value + "%0A" +
-        "*Phone Number:* " + document.getElementById("phone").value + "%0A" +
-        "*Customer Type:* " + document.getElementById("customer").value;
+function sendToWhatsApp(){
+let msg =
+"📱 *FESTO TELECOM ENTERPRISES* 📱\n\n"+
+"Service: "+service.value+"\n"+
+"Interest: "+interest.value+"\n"+
+"Product: "+product.value+"\n"+
+"Repair Phone: "+repair.value+"\n"+
+"Specs: "+specs.value+"\n\n"+
+"Name: "+name.value+"\n"+
+"Phone: "+phone.value+"\n"+
+"Customer: "+customer.value;
 
-    var url = "https://wa.me/2348064091788?text=" + message;
-    window.open(url, "_blank");
+window.open("https://wa.me/2348064091788?text="+encodeURIComponent(msg),"_blank");
 }
 </script>
 

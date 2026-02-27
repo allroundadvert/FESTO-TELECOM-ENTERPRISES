@@ -8,43 +8,47 @@
 <style>
 :root{
     --gold:#d4af37;
-    --deep:#05070a;
-    --dark:#0e1117;
-    --blue:#0a58ff;
+    --blue:#2563eb;
 }
-
 body{
     margin:0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #020617 60%);
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:radial-gradient(circle at top, #0f172a, #020617 60%);
     color:#e5e7eb;
 }
 
-/* ===== HERO IMAGE (NO STRETCH) ===== */
+/* ===== HERO SLIDER ===== */
 .hero{
     width:100%;
-    aspect-ratio: 16 / 7;
+    aspect-ratio:16/7;
     background:#000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    overflow:hidden;
 }
-
-.hero img{
+.slides{
+    display:flex;
+    width:200%;
+    height:100%;
+    animation:slide 10s infinite;
+}
+.slides img{
     width:100%;
     height:100%;
-    object-fit: contain; /* KEY FIX */
+    object-fit:contain;
     background:#000;
+}
+@keyframes slide{
+    0%,45%{transform:translateX(0);}
+    50%,95%{transform:translateX(-50%);}
+    100%{transform:translateX(0);}
 }
 
 /* ===== HEADER ===== */
 header{
-    background: linear-gradient(180deg, #020617, #000);
+    background:#000;
     padding:28px 16px;
     text-align:center;
     border-bottom:2px solid var(--gold);
 }
-
 header h1{
     margin:0;
     color:var(--gold);
@@ -52,11 +56,9 @@ header h1{
     letter-spacing:3px;
     font-weight:800;
 }
-
 header p{
     margin-top:8px;
     color:#9ca3af;
-    font-size:15px;
 }
 
 /* ===== CONTAINER ===== */
@@ -66,48 +68,23 @@ header p{
     padding:0 16px;
 }
 
-/* ===== POWER MESSAGE ===== */
+/* ===== MESSAGE ===== */
 .highlight{
-    background: linear-gradient(135deg, #020617, #020617);
     border:1px solid rgba(212,175,55,.35);
-    box-shadow:0 0 30px rgba(212,175,55,.08);
     padding:28px;
     margin-bottom:36px;
 }
 
-.highlight h2{
-    color:var(--gold);
-    margin-top:0;
-    font-size:22px;
-}
-
-.highlight p{
-    line-height:1.7;
-    color:#d1d5db;
-}
-
 /* ===== FORM ===== */
 form{
-    background: linear-gradient(180deg, #020617, #020617);
-    border:1px solid rgba(59,130,246,.25);
+    border:1px solid rgba(37,99,235,.3);
     padding:30px;
-    box-shadow:0 0 40px rgba(59,130,246,.08);
 }
-
-form h3{
-    text-align:center;
-    color:var(--gold);
-    margin-bottom:24px;
-    font-size:20px;
-}
-
 label{
     display:block;
     margin-top:16px;
     font-weight:600;
-    color:#e5e7eb;
 }
-
 input,select,textarea{
     width:100%;
     padding:12px;
@@ -115,32 +92,30 @@ input,select,textarea{
     background:#020617;
     border:1px solid #1f2937;
     color:#fff;
-    font-size:14px;
 }
-
-input:focus,select:focus,textarea:focus{
-    outline:none;
-    border-color:var(--blue);
-}
-
-textarea{
-    min-height:90px;
-}
-
 button{
     margin-top:28px;
     width:100%;
     padding:16px;
-    background: linear-gradient(90deg, var(--gold), #ffd966);
+    background:linear-gradient(90deg,var(--gold),#ffd966);
     border:none;
-    color:#000;
-    font-size:16px;
     font-weight:800;
     cursor:pointer;
 }
 
-button:hover{
-    filter:brightness(1.05);
+/* ===== GALLERY ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:14px;
+    margin:40px 0;
+}
+.gallery img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+    background:#000;
+    border:1px solid rgba(255,255,255,.1);
 }
 
 /* ===== FLOATING BUTTONS ===== */
@@ -153,117 +128,121 @@ button:hover{
     font-weight:700;
     text-decoration:none;
     z-index:999;
-    box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
+.whatsapp-btn{bottom:90px;background:#22c55e;}
+.call-btn{bottom:28px;background:#2563eb;}
 
-.whatsapp-btn{
-    bottom:90px;
-    background:#22c55e;
-}
-
-.call-btn{
-    bottom:28px;
-    background:#2563eb;
-}
-
-/* ===== FOOTER ===== */
 footer{
-    margin-top:50px;
-    padding:20px;
     text-align:center;
+    padding:20px;
     background:#000;
     color:#9ca3af;
-    font-size:13px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO IMAGE (NO STRETCH) -->
+<!-- SLIDER (2 MOVING IMAGES) -->
 <div class="hero">
-    <img src="https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/e30ab6fa8c6e0d3babf7e99a53e3dd1f7d91de3a/.github/workflows/Screenshot_20260224-134455.jpg" alt="Festo Telecom">
+  <div class="slides">
+    <img src="https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/6dd9f71dd32149938f2765750bdfeeee48c61626/Screenshot_20260225-185816.jpg">
+    <img src="https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/6dd9f71dd32149938f2765750bdfeeee48c61626/Screenshot_20260225-185849.jpg">
+  </div>
 </div>
 
 <header>
-    <h1>FESTO TELECOM ENTERPRISES</h1>
-    <p>Professional Phone Repairs • iPhone Screens • Wholesale Accessories</p>
+<h1>FESTO TELECOM ENTERPRISES</h1>
+<p>Phone Repairs • iPhone Screens • Wholesale Accessories</p>
 </header>
 
 <div class="container">
 
 <div class="highlight">
-<h2>Power • Precision • Trust</h2>
 <p>
-FESTO TELECOM ENTERPRISES delivers expert phone repairs, original-quality
-screens for all devices including iPhone, and wholesale supply of premium
-phone accessories. Fill the form below — your request goes directly to WhatsApp.
+We specialize in professional phone repairs, original-quality screens for all devices,
+and wholesale supply of phone accessories. Fill the form below or chat directly on WhatsApp.
 </p>
 </div>
 
+<!-- FORM (UNCHANGED → WHATSAPP) -->
 <form onsubmit="sendToWhatsApp();return false;">
-<h3>Purchase / Repair Request</h3>
-
 <label>Service Type</label>
-<select id="service">
-<option>Buying</option>
-<option>Repair</option>
-</select>
+<select id="service"><option>Buying</option><option>Repair</option></select>
 
 <label>Interest</label>
-<select id="interest">
-<option>Phone Accessories</option>
-<option>Phone Screen</option>
-<option>Complete Phone</option>
-</select>
+<select id="interest"><option>Phone Accessories</option><option>Phone Screen</option><option>Complete Phone</option></select>
 
-<label>Phone / Product Name</label>
-<input id="product" type="text">
+<label>Product / Phone</label>
+<input id="product">
 
 <label>Phone to Repair</label>
-<input id="repair" type="text">
+<input id="repair">
 
-<label>Specifications / Details</label>
+<label>Specifications</label>
 <textarea id="specs"></textarea>
 
-<label>Customer Name</label>
-<input id="name" type="text">
+<label>Name</label>
+<input id="name">
 
 <label>Phone Number</label>
-<input id="phone" type="tel">
+<input id="phone">
 
 <label>Customer Type</label>
-<select id="customer">
-<option>New Customer</option>
-<option>Old Customer</option>
-</select>
+<select id="customer"><option>New Customer</option><option>Old Customer</option></select>
 
-<button type="submit">SEND TO WHATSAPP</button>
+<button>SEND TO WHATSAPP</button>
 </form>
+
+<!-- STATIC IMAGES -->
+<div class="gallery">
+<img src="https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/6dd9f71dd32149938f2765750bdfeeee48c61626/Screenshot_20260225-190659.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/6dd9f71dd32149938f2765750bdfeeee48c61626/Screenshot_20260225-190813.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/6dd9f71dd32149938f2765750bdfeeee48c61626/Screenshot_20260225-190909.jpg">
+<img src="https://raw.githubusercontent.com/allroundadvert/FESTO-TELECOM-ENTERPRISES/6dd9f71dd32149938f2765750bdfeeee48c61626/Screenshot_20260225-191141.jpg">
+</div>
 
 </div>
 
-<footer>
-© 2026 FESTO TELECOM ENTERPRISES — Built for Power & Trust
-</footer>
+<footer>© 2026 FESTO TELECOM ENTERPRISES</footer>
 
-<a class="whatsapp-btn" href="https://wa.me/2348064091788" target="_blank">WhatsApp</a>
+<!-- FLOAT BUTTONS -->
+<a class="whatsapp-btn" href="#" onclick="openQuickWhatsApp()">WhatsApp</a>
 <a class="call-btn" href="tel:08064091788">Call</a>
 
 <script>
-function sendToWhatsApp(){
-let msg =
-"📱 *FESTO TELECOM ENTERPRISES* 📱\n\n"+
-"Service: "+service.value+"\n"+
-"Interest: "+interest.value+"\n"+
-"Product: "+product.value+"\n"+
-"Repair Phone: "+repair.value+"\n"+
-"Specs: "+specs.value+"\n\n"+
-"Name: "+name.value+"\n"+
-"Phone: "+phone.value+"\n"+
-"Customer: "+customer.value;
+function getGreeting(){
+    const h = new Date().getHours();
+    if(h < 12) return "Good morning";
+    if(h < 18) return "Good afternoon";
+    return "Good evening";
+}
 
-window.open("https://wa.me/2348064091788?text="+encodeURIComponent(msg),"_blank");
+/* Floating WhatsApp Button */
+function openQuickWhatsApp(){
+    const greeting = getGreeting();
+    const msg =
+        greeting + " FESTO TELECOM ENTERPRISES,%0A%0A" +
+        "I’m reaching out to request professional phone repair or to inquire about purchasing phone accessories and screens.%0A%0A" +
+        "I would appreciate your prompt assistance.%0AThank you.";
+    window.open("https://wa.me/2348064091788?text="+msg,"_blank");
+}
+
+/* Form WhatsApp */
+function sendToWhatsApp(){
+    const greeting = getGreeting();
+    let msg =
+    greeting + " FESTO TELECOM ENTERPRISES,%0A%0A"+
+    "Service: "+service.value+"%0A"+
+    "Interest: "+interest.value+"%0A"+
+    "Product: "+product.value+"%0A"+
+    "Repair Phone: "+repair.value+"%0A"+
+    "Specs: "+specs.value+"%0A%0A"+
+    "Name: "+name.value+"%0A"+
+    "Phone: "+phone.value+"%0A"+
+    "Customer: "+customer.value;
+
+    window.open("https://wa.me/2348064091788?text="+msg,"_blank");
 }
 </script>
 
